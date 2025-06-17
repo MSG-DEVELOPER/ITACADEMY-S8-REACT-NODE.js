@@ -1,13 +1,14 @@
-
-import './App.css'
+import "./App.css";
+import AppRoutes from "./routes/AppRoutes";
+import NavbarShared from "./components/Shared/NavbarShared/NavbarShared";
 
 function App() {
- 
   return (
     <>
-     hiola
+      <NavbarShared />
+      <AppRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
