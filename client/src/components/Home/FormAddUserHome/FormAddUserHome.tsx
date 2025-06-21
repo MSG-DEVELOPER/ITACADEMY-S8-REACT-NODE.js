@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { createUser } from "../../../api/users";
+
 import {
   FormContainer,
   StyledForm,
@@ -39,6 +40,7 @@ function FormAddUserHome() {
         console.log("Usuario creado:", response);
         alert("Usuario creado con éxito");
         reset();
+       
       })
       .catch((error) => {
         console.error("Fallo al crear usuario:", error);
