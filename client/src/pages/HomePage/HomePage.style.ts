@@ -33,3 +33,19 @@ export const Cell = styled.div`
   border: 1px solid #ccc;
   text-align: left;
 `;
+
+export const DeleteButton = styled.button`
+  background: none;
+  border: none;
+  color: #cc0000;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    color: #a00000;
+  }
+`;
+
