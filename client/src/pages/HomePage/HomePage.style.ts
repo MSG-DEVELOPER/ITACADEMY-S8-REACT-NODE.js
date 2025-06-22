@@ -34,6 +34,12 @@ export const Cell = styled.div`
   text-align: left;
 `;
 
+export const CellActions = styled(Cell)`
+display: flex;
+justify-content: space-around;
+ 
+`
+
 export const DeleteButton = styled.button`
   background: none;
   border: none;

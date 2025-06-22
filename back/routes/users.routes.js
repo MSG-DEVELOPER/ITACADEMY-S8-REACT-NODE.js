@@ -42,7 +42,11 @@ router.put("/:id", async (req, res) => {
       req.body,
       { new: true, runValidators: true }
     ).select("-password");
-    if (!updatedUser) return res.status(404).json({ message: "Usuario no encontrado" });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
     res.json(updatedUser);
   } catch (error) {
     res.status(400).json({ message: error.message });
