@@ -48,3 +48,24 @@ export function deleteUser(id: string) {
       throw err; // para que el caller (el componente) pueda mostrar alerta si quiere
     });
 }
+
+export function updateUser(id: string, user: Partial<UserToSend>) {
+  return fetch(`http://localhost:5000/api/users/${id}`, {
+    method: "PUT", 
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Error al modificar usuario (status: ${res.status})`);
+      }
+      return res.json();
+    })
+    .catch((err) => {
+      console.error("Error en updateUser:", err.message);
+      throw err;
+    });
+}
+
