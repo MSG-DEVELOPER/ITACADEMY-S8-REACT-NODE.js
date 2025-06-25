@@ -16,7 +16,9 @@ connectDB();
 
 // Rutas
 app.use("/api/users", require("./routes/users.routes"));
-app.use("/api/locations", require("./routes/location.routes")); // 👈 NUEVA RUTA
+app.use("/api/locations", require("./routes/location.routes")); 
+app.use("/api/events", require("./routes/events.routes"));
+
 
 // Servidor escuchando
 app.listen(PORT, () => {

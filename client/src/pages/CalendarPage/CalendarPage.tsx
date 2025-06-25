@@ -1,7 +1,12 @@
+import Calendar from "../../components/Calendar/Calendar"
 
 function CalendarPage() {
   return (
-    <div>CalendarPage</div>
+    <div>
+    
+      <Calendar/>
+
+    </div>
   )
 }
 
