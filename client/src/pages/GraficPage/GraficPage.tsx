@@ -1,7 +1,11 @@
+import Dashboard from "../../components/Grafic/Dashboard/Dashboard"
 
 function GraficPage() {
   return (
-    <div>GraficPage</div>
+    <div>
+         <Dashboard/>
+      
+    </div>
   )
 }
 
