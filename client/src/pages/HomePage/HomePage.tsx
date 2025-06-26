@@ -7,6 +7,7 @@ import {
   Cell,
   DeleteButton,
   CellActions,
+  
 } from "./HomePage.style";
 import FormAddUserHome from "../../components/Home/FormAddUserHome/FormAddUserHome";
 import { deleteUser } from "../../api/users";
@@ -83,6 +84,8 @@ function HomePage() {
       </Container>
 
       <FormAddUserHome />
+
+     
     </div>
   );
 }

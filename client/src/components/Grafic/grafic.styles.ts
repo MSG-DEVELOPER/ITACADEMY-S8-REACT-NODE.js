@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const DashboardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  justify-content: center;
+  background-color: #f3f4f6;
+  min-height: 80vh;
 `;
 
 export const ChartCard = styled.div`
-  flex: 1 1 45%;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  min-width: 300px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 `;
+

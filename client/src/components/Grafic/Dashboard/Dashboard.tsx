@@ -7,12 +7,12 @@ function Dashboard() {
   return (
     <DashboardContainer>
       <ChartCard>
-        <h3>Usuarios activos</h3>
+        <h2>Usuarios activos</h2>
         <BarChar />
       </ChartCard>
 
       <ChartCard>
-        <h3>Nuevas altas</h3>
+        <h2>Nuevas altas</h2>
         <LineChart />
       </ChartCard>
     </DashboardContainer>

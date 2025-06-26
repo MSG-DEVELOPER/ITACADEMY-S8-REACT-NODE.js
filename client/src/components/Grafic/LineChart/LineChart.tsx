@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -11,28 +12,41 @@ import {
 
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-const data = {
-  labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
-  datasets: [
-    {
-      label: 'Nuevas altas',
-      data: [5, 7, 3, 9, 6],
-      borderColor: '#10b981',
-      fill: false,
-    },
-  ],
-};
-
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-  },
-};
-
 function LineChart() {
+  const [labels, setLabels] = useState<string[]>([]);
+  const [altas, setAltas] = useState<number[]>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/stats')
+      .then((res) => res.json())
+      .then((data) => {
+        const dias = data.map((d: any) => d.dia);
+        const altasPorDia = data.map((d: any) => d.nuevasAltas);
+        setLabels(dias);
+        setAltas(altasPorDia);
+      })
+      .catch((err) => console.error('Error al obtener stats:', err));
+  }, []);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Nuevas altas',
+        data: altas,
+        borderColor: '#10b981',
+        fill: false,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' as const },
+    },
+  };
+
   return <Line data={data} options={options} />;
 }
 
