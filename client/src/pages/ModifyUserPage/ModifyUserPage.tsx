@@ -29,7 +29,7 @@ function ModifyUserPage() {
   const { userId } = useParams();
 
   function onSubmit(data: FormData) {
-    alert("por aqui pasa " + userId);
+  
 
     if (data.confirmPassword && data.password !== data.confirmPassword) {
       alert("Las contraseñas no coinciden");

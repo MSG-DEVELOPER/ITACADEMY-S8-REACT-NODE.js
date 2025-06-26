@@ -45,7 +45,7 @@ function HomePage() {
   }
 
   function handleModify(id: string) {
-    alert(id);
+    
     navigate(`/modifyUser/${id}`);
   }
 
