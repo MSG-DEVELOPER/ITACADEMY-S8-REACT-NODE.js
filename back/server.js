@@ -18,6 +18,8 @@ connectDB();
 app.use("/api/users", require("./routes/users.routes"));
 app.use("/api/locations", require("./routes/location.routes")); 
 app.use("/api/events", require("./routes/events.routes"));
+app.use("/api/stats", require("./routes/stats.routes"));
+
 
 
 // Servidor escuchando
