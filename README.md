@@ -1,109 +1,177 @@
-# ITACADEMY-S7-REACT
+# ITACADEMY-S7-REACT-MONGO_API
+
+> Sample project for Sprint 7 at IT Academy Barcelona. Includes a React frontend (Vite) and a Node.js backend with MongoDB.
+
+---
+
+## 📄 Description
+
+This project aims to practice integrating common plugins and storing their data in a database. It is divided into two main parts:
+
+- **Front-end**: A React application featuring:
+  - A top navigation menu with links to: Home, Map, FullCalendar, and Charts.
+  - Components for an interactive map (Leaflet), an editable calendar (FullCalendar), and charts (Chart.js).
+
+- **Back-end**: A REST API built with **Node.js** and **Express**, using **MongoDB** for data persistence. It provides endpoints for:
+  - Users (generic CRUD).
+  - Map locations (latitude and longitude).
+  - Calendar events.
+  - Sample data for bar and line charts.
+
+---
+
+## 🚀 Technologies Used
+
+### Back-end
+
+- Node.js (v18+)
+- Express (v5.1.0)
+- Mongoose (v8.16.0)
+- dotenv
+- cors
+- nodemon (development)
+
+### Front-end
+
+- React (v19.1.0)
+- Vite
+- React Router DOM (v7.6.2)
+- styled-components (v6.1.19)
+- React Hook Form (v7.58.1)
+- @fullcalendar/react, @fullcalendar/daygrid, @fullcalendar/interaction (v6.1.17)
+- react-leaflet (v5.0.0) & leaflet (v1.9.4)
+- react-chartjs-2 / Chart.js
+- TypeScript (~5.8.3)
+- ESLint (+ React plugins)
+
+---
+
+## 📝 Prerequisites
+
+- **Node.js** (v18 or higher)
+- **npm** (v9 or higher) or **yarn**
+- **MongoDB** (local or Atlas)
+- Code editor (e.g., VSCode)
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-username/ITACADEMY-S7-REACT-MONGO_API.git
+   cd ITACADEMY-S7-REACT-MONGO_API
 
 
-# 🎬 MovieZone – React App
+2. **Configure environment variables**
 
-## 📄 Descripción
+- Create a .env file inside the server/ folder with the following content:
 
-MovieZone es una aplicación web desarrollada en **React** que permite explorar una galería de películas protegida por autenticación. La app gestiona rutas públicas y privadas, haciendo uso de **React Router** y **Firebase Authentication** para garantizar que solo usuarios registrados puedan acceder a determinadas secciones.
-
-El diseño está completamente personalizado con **styled-components**, proporcionando una experiencia visual limpia y moderna.
-
-## 🚀 Aprendizajes
-
->Creación de rutas privadas y redirección inteligente con **React Router v7.**
-
->Autenticación de usuarios con **Firebase Authentication.**
-
->Persistencia de sesión mediante **Redux Toolkit.**
-
- >Componentes estilizados con **styled-components.**
-
- >Formularios gestionados con **React Hook Form.**
-
- >Manejo de operaciones asincrónicas (como llamadas a APIs externas) mediante el *middleware* **Redux Thunk** 
-
-## 💻 Tecnologías Utilizadas
-
-
-- Vite (dev server rápido)
-
-- React v19.1.0
-
-- TypeScript 5.x
-
-- Redux Toolkit & React Redux
-
-- React Router DOM v7.6.1
-
-- Firebase v11 (Auth)
-
-- React Hook Form
-
-- Styled-components v6
-
-- lucide-react (iconos)
-
- 
-
-
-
-## 📋 Requisitos Técnicos
-
- ✅ Node.js (versión 18 o superior)
-
-✅ npm (versión 9 o superior)
-
- ✅ Navegador moderno (Chrome, Firefox, Edge...)
-
- ✅ Editor de código como VSCode (opcional, pero recomendado)
-
-✅ Cuenta en Firebase para obtener credenciales de autenticación (puedes crear una gratis en https://firebase.google.com/)
-
-✅ Claves API de The Movie Database (TMDb) para poder consumir su API de películas y series. Regístrate y obtén tu API Key gratuita.
- > Nota: Las claves de Firebase y TMDb deben configurarse en un archivo .env para que la aplicación funcione correctamente.
-
- ## 🛠️ Instalación
-
-**1**. Clona este repositorio
+```env
+PORT=4000.
+MONGO_URI=mongodb://localhost:27017/itacademy_s7
 ```
- https://github.com/MSG-DEVELOPER/ITACADEMY-S7-REACT-API.git
+> **Note:**  
+> If you’re using MongoDB Atlas, replace the `MONGO_URI` value with your Atlas connection string.
+
+3. **Install dependencies**
+
+*Back-end*
+
+```bash
+cd server
+npm install
 ```
-**2**. Una vez dentro del directorio del proyecto, instala dependencias con
- ```
- $ npm install
+*Front-end*
+```bash
+cd ../client
+npm install
 ```
-**3**.Configura las variables de entorno siguiendo las instrucciones en la sección ⚙️ Configuración de variables de entorno.
+4. **Run in development mode**
 
-**4**. Levanta el servidor usando Vite:
+*Back-end*
+
+```bash
+cd server
+npm run dev
 ```
-$ npm run dev
+The API will be running at [http://localhost:5000](http://localhost:5000).
+
+
+*Front-end*
+
+
+```bash
+cd client
+npm run dev
 ```
+The React app will be available at [http://localhost:5173](http://localhost:5173)
 
-## ⚙️ Configuración de variables de entorno
+---
 
-Para ejecutar este proyecto es necesario configurar las variables de entorno con las claves y credenciales necesarias.
+## 🚩 Project Structure
 
-1. Copia el archivo `.env.example` y renómbralo a `.env` en la raíz del proyecto.
+```bash
 
-2. Reemplaza los valores en `.env` por tus claves reales de Firebase y API Authorization.
+├── server/
+│   ├── server.js        # Entry point
+│   ├── routes/          # Route definitions (users, locations, events)
+│   ├── models/          # Mongoose schemas
+│   └── controllers/     # Request handlers
+└── client/
+    ├── src/
+    │   ├── components/  # React components (Menu, Map, Calendar, Charts)
+    │   ├── pages/       # Page components for routing
+    │   ├── App.jsx      # React Router setup
+    │   └── main.jsx     # Vite entry point
+    └── public/          # Static assets
+```
+---
 
-3. Guarda los cambios.
+## 📋 API Endpoints
 
+> **Base URL**: http://localhost:5000/api
 
+```bash
+| Method | Endpoint       | Description                  |
+| ------ | -------------- | ---------------------------- |
+| GET    | `/users`       | List all users               |
+| POST   | `/users`       | Create a new user            |
+| GET    | `/users/:id`   | Get user by ID               |
+| PUT    | `/users/:id`   | Update user by ID            |
+| DELETE | `/users/:id`   | Delete user by ID            |
+| GET    | `/locations`   | List map locations           |
+| POST   | `/locations`   | Add a new location           |
+| GET    | `/events`      | List calendar events         |
+| POST   | `/events`      | Create a new event           |
+| DELETE | `/events/:id`  | Delete event by ID           |
+| GET    | `/stats` | Fetch sample data for charts |
+```
+---
+## 🖼️ Key Features
+
+- **Interactive Map**: View and add locations with latitude and longitude.
+- **Calendar**: Create and delete events dynamically.
+
+- **Charts**: Display bar and line charts with dynamic data.
+
+- **Full CRUD**: Endpoints and controllers to manage MongoDB data.
+
+---
 
 ## 🤝 Contribuciones
-¡Las contribuciones son bienvenidas! Para proponer mejoras:
 
-Haz un fork del repositorio.
+Contributions are welcome! To propose improvements:
 
-Crea una nueva rama con tu mejora:
-git checkout -b feature/nueva-funcionalidad
+Make a fork of the repository.
 
-Realiza los cambios y súbelos:
-git commit -m "Añadida nueva funcionalidad"
-git push origin feature/nueva-funcionalidad
+Create a new branch with your improvement:
+git checkout -b feature/new-feature
 
-Abre un Pull Request en GitHub.
+Make the changes and push them:
+git commit -m "Added new feature"
+git push origin feature/new-feature
 
- ¡Gracias por visitar este proyecto!
+Open a Pull Request on GitHub.
+
+Thank you for checking out this project!
