@@ -1,54 +1,109 @@
-# React + TypeScript + Vite
+# ITACADEMY-S7-REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🎬 MovieZone – React App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📄 Descripción
 
-## Expanding the ESLint configuration
+MovieZone es una aplicación web desarrollada en **React** que permite explorar una galería de películas protegida por autenticación. La app gestiona rutas públicas y privadas, haciendo uso de **React Router** y **Firebase Authentication** para garantizar que solo usuarios registrados puedan acceder a determinadas secciones.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+El diseño está completamente personalizado con **styled-components**, proporcionando una experiencia visual limpia y moderna.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Aprendizajes
+
+>Creación de rutas privadas y redirección inteligente con **React Router v7.**
+
+>Autenticación de usuarios con **Firebase Authentication.**
+
+>Persistencia de sesión mediante **Redux Toolkit.**
+
+ >Componentes estilizados con **styled-components.**
+
+ >Formularios gestionados con **React Hook Form.**
+
+ >Manejo de operaciones asincrónicas (como llamadas a APIs externas) mediante el *middleware* **Redux Thunk** 
+
+## 💻 Tecnologías Utilizadas
+
+
+- Vite (dev server rápido)
+
+- React v19.1.0
+
+- TypeScript 5.x
+
+- Redux Toolkit & React Redux
+
+- React Router DOM v7.6.1
+
+- Firebase v11 (Auth)
+
+- React Hook Form
+
+- Styled-components v6
+
+- lucide-react (iconos)
+
+ 
+
+
+
+## 📋 Requisitos Técnicos
+
+ ✅ Node.js (versión 18 o superior)
+
+✅ npm (versión 9 o superior)
+
+ ✅ Navegador moderno (Chrome, Firefox, Edge...)
+
+ ✅ Editor de código como VSCode (opcional, pero recomendado)
+
+✅ Cuenta en Firebase para obtener credenciales de autenticación (puedes crear una gratis en https://firebase.google.com/)
+
+✅ Claves API de The Movie Database (TMDb) para poder consumir su API de películas y series. Regístrate y obtén tu API Key gratuita.
+ > Nota: Las claves de Firebase y TMDb deben configurarse en un archivo .env para que la aplicación funcione correctamente.
+
+ ## 🛠️ Instalación
+
+**1**. Clona este repositorio
+```
+ https://github.com/MSG-DEVELOPER/ITACADEMY-S7-REACT-API.git
+```
+**2**. Una vez dentro del directorio del proyecto, instala dependencias con
+ ```
+ $ npm install
+```
+**3**.Configura las variables de entorno siguiendo las instrucciones en la sección ⚙️ Configuración de variables de entorno.
+
+**4**. Levanta el servidor usando Vite:
+```
+$ npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚙️ Configuración de variables de entorno
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Para ejecutar este proyecto es necesario configurar las variables de entorno con las claves y credenciales necesarias.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Copia el archivo `.env.example` y renómbralo a `.env` en la raíz del proyecto.
+
+2. Reemplaza los valores en `.env` por tus claves reales de Firebase y API Authorization.
+
+3. Guarda los cambios.
+
+
+
+## 🤝 Contribuciones
+¡Las contribuciones son bienvenidas! Para proponer mejoras:
+
+Haz un fork del repositorio.
+
+Crea una nueva rama con tu mejora:
+git checkout -b feature/nueva-funcionalidad
+
+Realiza los cambios y súbelos:
+git commit -m "Añadida nueva funcionalidad"
+git push origin feature/nueva-funcionalidad
+
+Abre un Pull Request en GitHub.
+
+ ¡Gracias por visitar este proyecto!
