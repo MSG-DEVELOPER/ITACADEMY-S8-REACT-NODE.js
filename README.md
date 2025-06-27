@@ -68,7 +68,7 @@ This project aims to practice integrating common plugins and storing their data 
 - Create a .env file inside the server/ folder with the following content:
 
 ```env
-PORT=4000.
+PORT=5000.
 MONGO_URI=mongodb://localhost:27017/itacademy_s7
 ```
 > **Note:**  
@@ -159,7 +159,7 @@ The React app will be available at [http://localhost:5173](http://localhost:5173
 
 ---
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
 Contributions are welcome! To propose improvements:
 
