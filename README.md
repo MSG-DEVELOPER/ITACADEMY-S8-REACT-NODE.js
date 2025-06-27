@@ -1,6 +1,6 @@
-# ITACADEMY-S7-REACT-MONGO_API
+# ITACADEMY-S8-REACT-MONGO_API
 
-> Sample project for Sprint 7 at IT Academy Barcelona. Includes a React frontend (Vite) and a Node.js backend with MongoDB.
+> Sample project for Sprint 8 at IT Academy Barcelona. Includes a React frontend (Vite) and a Node.js backend with MongoDB.
 
 ---
 
@@ -175,3 +175,11 @@ git push origin feature/new-feature
 Open a Pull Request on GitHub.
 
 Thank you for checking out this project!
+
+---
+## 📜 License
+This project is licensed under the [MIT License](LICENSE). See the LICENSE file for details.
+>Developed by Marcos for IT Academy Barcelona
+
+
+
